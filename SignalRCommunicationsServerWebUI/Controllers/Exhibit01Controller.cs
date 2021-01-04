@@ -22,12 +22,15 @@ namespace SignalRCommunicationsServerWebUI.Models
         public IEnumerable<Exhibit01> Get()
         {
             var rng = new Random();
+            Console.WriteLine($"Hello from the Exhibit Controller{rng.Next(1,99)}");
+            _logger.Log(LogLevel.Information,"hello");
             return Enumerable.Range(1, 1).Select(index => new Exhibit01
                 {
                     Message = "hi",
                     Number = rng.Next(1,100)
                 })
                 .ToArray();
+            
         }
     }
 }
